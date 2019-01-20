@@ -55,11 +55,8 @@ function test_input($data) {
 
 
 <h2>Welcome to Yozelin's Form Page</h2>
-<p>
-  <span class="error"* required field</span>
-</p>
+<p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-
 
   Name: <input type="text" name="name">
   <span class="error">* <?php echo $nameErr;?></span>
@@ -78,10 +75,10 @@ function test_input($data) {
 
 
 
-Welcome <?php echo $_GET["name"]; ?><br>
-Your email address is: <?php echo $_GET["email"]; ?>
-Your number is: <?php echo $_GET["number"]; ?>
-Your residential state is: <?php echo $_GET["state"]; ?>
+Name <?php echo htmlspecialchars($_POST['name']); ?><br>
+Email: <?php echo $_GET["email"]; ?><br>
+Number: <?php echo $_GET["number"]; ?><br>
+State: <?php echo $_GET["state"]; ?>
 
 
 </body>
