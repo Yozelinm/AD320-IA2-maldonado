@@ -9,8 +9,8 @@
 
 <?php
 
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+$nameErr = $emailErr = $numberErr = $stateeErr = "";
+$name = $email = $number = $state = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -33,13 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
   }
 
-  if (empty($_POST["Number"])) {
+  if (empty($_POST["number"])) {
     $number = "";
   } else {
     $number = test_input($_POST["number"]);
   }
 
-  if (empty($_POST["State"])) {
+  if (empty($_POST["state"])) {
     $state = "";
   } else {
     $state = test_input($_POST["state"]);
@@ -55,7 +55,9 @@ function test_input($data) {
 
 
 <h2>Welcome to Yozelin's Form Page</h2>
-<p><span class="error"* required field</span></p>
+<p>
+  <span class="error"* required field</span>
+</p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 
 
@@ -78,6 +80,8 @@ function test_input($data) {
 
 Welcome <?php echo $_GET["name"]; ?><br>
 Your email address is: <?php echo $_GET["email"]; ?>
+Your number is: <?php echo $_GET["number"]; ?>
+Your residential state is: <?php echo $_GET["state"]; ?>
 
 
 </body>
